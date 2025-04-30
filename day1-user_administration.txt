@@ -1,0 +1,40 @@
+A Delegate User is someone who is temporarily authorized to act on behalf of another user in ServiceNow. Delegates can receive and respond to approvals, notifications, or tasks that are normally assigned to the original user.
+
+
+
+🔑 "Roles" vs. "Contains Roles" in ServiceNow
+1. Roles (on User Record)
+This refers to the roles directly assigned to a user.
+
+You see this in the Roles related list on a User record.
+
+It determines what that specific user can do, based on the permissions tied to the roles.
+
+Example:
+
+If you assign brillio_problem to user1, then brillio_problem appears in Roles on the user's profile.
+
+2. Contains Roles (on Role Record)
+This is a list of other roles that a given role inherits.
+
+When Role A contains Role B, any user assigned Role A automatically gains all permissions of Role B.
+
+Think of it like role hierarchy or role inheritance.
+
+Example:
+
+If brillio_problem contains the problem_user role, then anyone with brillio_problem will also functionally have problem_user.
+
+🔁 In Simple Terms:
+
+Term	Where You See It	Meaning
+Roles	On a User record	The roles directly granted to a user
+Contains Roles	On a Role record	The roles that are inherited by this role
+
+
+
+allows users with the module role to access the module even if they do not have permission to view the containing application menu
+
+
+
+
