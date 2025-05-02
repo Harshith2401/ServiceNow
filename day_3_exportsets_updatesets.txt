@@ -1,0 +1,169 @@
+Update sets: Lab 3
+1. Create Local updateset capture updates in this update set
+2. Try Merge update sets functionality
+3. Updatesourse and Export Import process testing.
+4. Backout update set functionality.
+5. Parent or Batch update functionality
+Import data:
+Create 10 records in the excel sheet for stories table with short description, description, 
+assignment group, category as headers with proper field values import this data into 
+stories table. by creating an import set table, transform maps.
+
+
+Update Sets:
+1. Local Update Set:
+Why:
+
+A Local Update Set is used to capture customizations made within an instance, allowing you to track changes 
+and move them between different environments (e.g., dev, test, prod).
+
+How:
+
+When you begin working on a customization (e.g., creating a new UI Action, Business Rule), changes are 
+automatically captured in the selected Local Update Set.
+
+You set the state to "In Progress" to start capturing.
+
+Where:
+
+Local update sets are typically used during the development phase, capturing all changes made by a developer for later transport.
+
+2. Merge Update Sets:
+Why:
+
+Merging update sets is necessary when you have multiple update sets that need to be combined.
+ This can happen when different developers are working on separate configurations that need to be moved together.
+
+How:
+
+The system automatically identifies changes in the source update set and integrates them into 
+the target update set. You can review any conflicts before finalizing the merge.
+
+Where:
+
+This process is essential in environments with multiple teams working on different configurations, 
+especially when you want to combine their changes before deployment.
+
+3. Update Source & Export/Import Process:
+Why:
+
+Exporting an update set allows you to move configurations between ServiceNow instances (e.g., from dev to test).
+The import process brings changes from one instance into another, ensuring consistency across environments.
+
+How:
+
+Exporting involves creating an XML file of the update set. The import process involves loading the file into the target instance.
+
+Where:
+
+This is used primarily during the promotion of customizations across different stages of the 
+SDLC (Software Development Life Cycle), like moving changes from development to test and then to production.
+
+4. Backout Update Set:
+Why:
+
+Sometimes changes made by an update set may break functionality or cause unexpected behavior. 
+Backing out an update set is the safest way to undo those changes and restore the previous state.
+
+How:
+
+The system reverses the changes made by the update set. It’s like a "rollback" functionality to undo the work.
+
+Where:
+
+This is useful in production environments or when you realize the customizations made in an update set are causing issues in the system.
+
+5. Parent or Batch Update Set:
+Why:
+
+Parent and batch update sets are designed to handle multiple update sets that are related. 
+This allows teams to group related customizations together for deployment in one go.
+
+How:
+
+The Parent Update Set can have Child Update Sets associated with it. Deploying the parent 
+will deploy all associated child sets as a batch.
+
+Where:
+
+In large projects with multiple sub-teams working on different modules, batch update 
+sets help streamline deployment and ensure that all related updates are moved together.
+
+Import Data:
+1. Create Records in Excel Sheet:
+Why:
+
+Excel is commonly used to gather bulk data before importing into the system. 
+It serves as a structured, easily editable format to prepare data for import.
+
+How:
+
+The records in Excel represent the data you intend to import, with the relevant columns mapped to fields in ServiceNow.
+
+Where:
+
+Data is generally collected in Excel or CSV format before it is transferred 
+into ServiceNow for processing into the correct table.
+
+2. Create Import Set Table:
+Why:
+
+An Import Set Table serves as a temporary holding area where raw data from 
+an external source (like an Excel file) is placed before transforming it into the target table (e.g., Stories table).
+
+How:
+
+The Import Set Table holds the imported data until you can map it to the correct fields in the target table.
+
+Where:
+
+This process occurs when data is being brought into ServiceNow from external 
+systems or files (such as Excel, CSV) and needs to be structured for use in ServiceNow applications.
+
+3. Create Transform Map:
+Why:
+
+A Transform Map is used to define how the raw data in an Import Set Table will
+ be mapped and transferred to the actual ServiceNow tables (like the Stories table).
+
+How:
+
+You create field mappings in the Transform Map to specify how each column in the
+ Import Set Table will correspond to fields in the target table (e.g., the Short Description field in Excel maps
+  to the short_description field in the Story table).
+
+Where:
+
+This process is essential when integrating external data (like incidents, stories, tasks) into ServiceNow,
+ ensuring that data is properly structured for use in ServiceNow.
+
+4. Import Data:
+Why:
+
+Importing data is required when bringing in large amounts of data from external sources into ServiceNow.
+ Without this, manual entry would be inefficient and error-prone.
+
+How:
+
+The import process loads the data from the source file (e.g., Excel or CSV) into the Import Set Table. 
+Afterward, the data will be transformed into the target table using the Transform Map.
+
+Where:
+
+Data import is a typical process during initial data load or when migrating data from other systems into
+ ServiceNow (e.g., when onboarding new projects, clients, or assets).
+
+5. Transform Data into Target Table:
+Why:
+
+After importing data into the Import Set Table, it must be structured and moved into the appropriate target table to be usable within ServiceNow.
+
+How:
+
+The Transform Map applies the field mappings, and the transformation process runs, moving data from the 
+Import Set Table to the target table (e.g., Stories table).
+
+Where:
+
+This step is essential when you want to convert imported data into a usable format within ServiceNow, 
+typically in instances like data migration or bulk updates to records.
